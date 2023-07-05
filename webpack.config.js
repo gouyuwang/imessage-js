@@ -6,9 +6,9 @@ const config = {
     output: {
         //目标输出目录
         path:  path.resolve(root, 'dist'),
-        library: "Messenger",
+        library: "IMessenger",
         //输出文件的文件名
-        filename: 'messenger.js',
+        filename: 'imessager.js',
         libraryTarget : "umd",
         globalObject: "this"
     },

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p> IMessage Master Response:<span id="response" style="padding-left: 10px;color: blue"> nothing </span></p>
+<script src="dist/imessager.js" type="text/javascript" crossorigin="anonymous"></script>
+<script>
+    const socketUrl = 'http://localhost:3000'; // IMessage server host
+
+    (new IMessenger(socketUrl))
+        .on('connect', () => {
+            document.querySelector('#response').innerHTML = 'pending'
+        })
+        .on('disconnect', () => {
+            document.querySelector('#response').innerHTML = 'disconnect'
+        })
+        .subscribe('default')
+        .on('message', data => {
+            document.querySelector('#response').innerHTML = JSON.stringify(data)
+        })
+</script>
+</body>
+</html>

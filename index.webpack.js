@@ -1,3 +1,3 @@
-const Messenger = require("./lib/client.js").default
+'use strict'
 
-module.exports = Messenger
+module.exports = require("./lib/client.js").default
